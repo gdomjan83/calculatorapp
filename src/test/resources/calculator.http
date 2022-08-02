@@ -1,0 +1,43 @@
+### Addition with correct values
+GET http://localhost:8080/api/calculator/add?number=3&otherNumber=4
+Accept: application/json
+
+### Addition with missing value
+GET http://localhost:8080/api/calculator/add?otherNumber=4
+Accept: application/json
+
+### Addition with missing both values
+GET http://localhost:8080/api/calculator/add
+Accept: application/json
+
+### Addition with incorrect value
+GET http://localhost:8080/api/calculator/add?number=5!3&otherNumber=2
+Accept: application/json
+
+### Multiplication with correct values
+GET http://localhost:8080/api/calculator/multiply?number=3.5&otherNumber=10
+Accept: application/json
+
+### Subtraction with correct values
+GET http://localhost:8080/api/calculator/subtract?number=10&otherNumber=2
+Accept: application/json
+
+### Division with correct values
+GET http://localhost:8080/api/calculator/divide?number=10&otherNumber=5
+Accept: application/json
+
+### Division with zero
+GET http://localhost:8080/api/calculator/divide?number=10&otherNumber=0
+Accept: application/json
+
+### Fibonacci number with correct value
+GET http://localhost:8080/api/calculator/fibonacci?number=6
+Accept: application/json
+
+### Fibonacci number with incorrect value (not integer)
+GET http://localhost:8080/api/calculator/fibonacci?number=6.3
+Accept: application/json
+
+### Fibonacci number with incorrect value (not positive)
+GET http://localhost:8080/api/calculator/fibonacci?number=-1
+Accept: application/json
