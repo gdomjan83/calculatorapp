@@ -72,12 +72,4 @@ A mellékelt Dockerfile segítségével Docker image generálható, így az alka
 docker image letölthető és futtatható a Docker Hubról a következő paranccsal: `docker run -d -p 8080:8080 --name calculator gdomjan83/test:calculator` 
 Ezt követően az alkalmazás működés közben is megtekinthető a http://localhost:8080/swagger-ui.html címen.
 
-
-
-
-
-
-
-
-
 ---
