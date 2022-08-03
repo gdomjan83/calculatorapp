@@ -41,8 +41,6 @@ hogy megfelelő paraméter került-e megadásra. A következő validálások tö
 
 A validálások megsértése esetén az alkalmazás az adott hibát tartalazó kivételt ad vissza. 
 
----
-
 ### Tesztesetek
 
 Az alkalmazás mindkét rétege tesztelésre került. A szervíz réteghez unit tesztek készültek (JUnit), míg a kontroller réteghez integrációs tesztek
