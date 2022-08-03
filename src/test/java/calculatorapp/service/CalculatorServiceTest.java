@@ -152,6 +152,14 @@ class CalculatorServiceTest {
     }
 
     @Test
+    @DisplayName("Testing fibonacci sequence with missing input")
+    void testGetFibonacciMissingInput() {
+        FibonacciInputNumberNotFound exception = assertThrows(FibonacciInputNumberNotFound.class,
+                () -> service.getFibonacci(Optional.empty()));
+        assertEquals("The input number is missing.", exception.getDetail());
+    }
+
+    @Test
     @DisplayName("Testing fibonacci sequence with wrong input (not whole number)")
     void testGetFibonacciNonIntegerInput() {
         IntegerNotFoundException exception = assertThrows(IntegerNotFoundException.class,

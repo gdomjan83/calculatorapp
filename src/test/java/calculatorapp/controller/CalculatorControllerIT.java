@@ -236,6 +236,17 @@ class CalculatorControllerIT {
     }
 
     @Test
+    @DisplayName("IT Testing fibonacci sequence with missing input")
+    void testGetFibonacciMissingInput() {
+        webTestClient.get()
+                .uri("api/calculator/fibonacci")
+                .exchange()
+                .expectStatus().isBadRequest()
+                .expectBody(Problem.class)
+                .value(r -> assertEquals("The input number is missing.", r.getDetail()));
+    }
+
+    @Test
     @DisplayName("IT Testing fibonacci sequence with wrong input (not whole number)")
     void testGetFibonacciNonIntegerInput() {
         webTestClient.get()

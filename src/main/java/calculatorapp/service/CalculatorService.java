@@ -59,6 +59,10 @@ public class CalculatorService {
         return number.orElseThrow(() -> new InputNumberNotFoundException());
     }
 
+    private String checkForFibonacciInputPresent(Optional<String> number) {
+        return number.orElseThrow(() -> new FibonacciInputNumberNotFound());
+    }
+
     private double parseStringForDouble(Optional<String> number) {
         String numberInString = checkForNumberPresent(number);
         try {
@@ -69,7 +73,7 @@ public class CalculatorService {
     }
 
     private int parseStringForInteger(Optional<String> number) {
-        String numberInString = checkForNumberPresent(number);
+        String numberInString = checkForFibonacciInputPresent(number);
         try {
             int result = Integer.parseInt(numberInString);
             checkPositiveInput(result);
