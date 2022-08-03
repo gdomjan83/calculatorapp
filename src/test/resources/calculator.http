@@ -34,6 +34,10 @@ Accept: application/json
 GET http://localhost:8080/api/calculator/fibonacci?number=6
 Accept: application/json
 
+### Fibonacci number with missing input value
+GET http://localhost:8080/api/calculator/fibonacci
+Accept: application/json
+
 ### Fibonacci number with incorrect value (not integer)
 GET http://localhost:8080/api/calculator/fibonacci?number=6.3
 Accept: application/json
