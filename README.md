@@ -27,7 +27,7 @@ Végpontok:
 | GET          | `"/api/calculator/divide"`     | Az első paraméterként megadott számot elosztja a második számmal, és visszatér az eredménnyel.  |	
 | GET          | `"/api/calculator/fibonacci"`  | A Fibonacci sorozatból visszaadja a paraméterként megadott elemet. (Az első elem az 1-es.)      |
 
-A metódusokban szükséges átadni azokat a számokat, melyeken a műveletet el kívánjuk végezni. A megadás az URL-ben `Query String` segítségével történik. 
+A végpontokban szükséges átadni azokat a számokat, melyeken a műveletet el kívánjuk végezni. A megadás az URL-ben `Query String` segítségével történik. 
 Például: `/api/calculator/add?number=4&otherNumber=10.5`
 
 ### Szervíz réteg
@@ -62,14 +62,14 @@ Az alkalmazáshoz készült `src/test/resources/calculator.http` fájlban HTTP k
 
 Az alkalmazás 17-es JAVA verzióval készült, Spring Boot implementálásával. 
 
-Az applikáció egy kétrétegű alkalmazás, melyben a funkciókat egy kontroller és egy szervíz réteg valósítja meg. Mivel adatok rögzítése nem történik a futtatás közben, ezért repozitori réteg nem készült. A kivitelezés `REST API` integrálásával
+Az applikáció egy kétrétegű alkalmazás, melyben a funkciókat egy kontroller és egy szervíz réteg valósítja meg. Mivel adatok rögzítése adatbázisban nem történik a működés közben, ezért repozitori réteg nem készült. A kivitelezés `REST API` integrálásával
 történt.
 
 Az alkalmazáshoz belső dokumentáció is készült a SwaggerUI implementációjával, melynek segítségével az alkalmazás működése megtekinthető
 a http://localhost:8080/swagger-ui.html címen (az alkalmazás futtatása közben).
 
 A mellékelt Dockerfile segítségével Docker image generálható, így az alkalmazás Dockerből is futtatható. Továbbá az alkalmazás futtatható verzióját tartalmazó
-docker image letölthető a Docker Hubról a következő paranccsal: `docker run -d -p 8080:8080 --name calculator gdomjan83/test:calculator` 
+docker image letölthető és futtatható a Docker Hubról a következő paranccsal: `docker run -d -p 8080:8080 --name calculator gdomjan83/test:calculator` 
 Ezt követően az alkalmazás működés közben is megtekinthető a http://localhost:8080/swagger-ui.html címen.
 
 
