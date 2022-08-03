@@ -141,15 +141,14 @@ class CalculatorServiceTest {
     }
 
     //Fibonacci tests
-    @Test
+    @RepeatedTest(value = 3, name = "Test {currentRepetition}/{totalRepetitions}")
     @DisplayName("Testing fibonacci sequence with correct input")
-    void testGetFibonacci() {
-        ResultDao result = service.getFibonacci(Optional.of("2"));
-        assertEquals(1, result.getResult());
-        result = service.getFibonacci(Optional.of("6"));
-        assertEquals(8, result.getResult());
-        result = service.getFibonacci(Optional.of("19"));
-        assertEquals(4181, result.getResult());
+    void testGetFibonacci(RepetitionInfo repetitionInfo) {
+        String[] input = {"2", "6", "19"};
+        int[] output = {1, 8, 4181};
+
+        ResultDao resultDao = service.getFibonacci(Optional.of(input[repetitionInfo.getCurrentRepetition() - 1]));
+        assertEquals(output[repetitionInfo.getCurrentRepetition() - 1], resultDao.getResult());
     }
 
     @Test
