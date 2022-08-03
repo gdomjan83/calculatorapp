@@ -1,6 +1,6 @@
 package calculatorapp.service;
 
-import calculatorapp.dao.ResultDao;
+import calculatorapp.dto.ResultDto;
 import calculatorapp.exception.*;
 import org.springframework.stereotype.Service;
 
@@ -9,37 +9,37 @@ import java.util.Optional;
 @Service
 public class CalculatorService {
 
-    public ResultDao addNumbers(Optional<String> number, Optional<String> anotherNumber) {
+    public ResultDto addNumbers(Optional<String> number, Optional<String> anotherNumber) {
         double firstNumber = parseStringForDouble(number);
         double secondNumber = parseStringForDouble(anotherNumber);
-        return new ResultDao(firstNumber + secondNumber);
+        return new ResultDto(firstNumber + secondNumber);
     }
 
-    public ResultDao multiplyNumbers(Optional<String> number, Optional<String> anotherNumber) {
+    public ResultDto multiplyNumbers(Optional<String> number, Optional<String> anotherNumber) {
         double firstNumber = parseStringForDouble(number);
         double secondNumber = parseStringForDouble(anotherNumber);
-        return new ResultDao(firstNumber * secondNumber);
+        return new ResultDto(firstNumber * secondNumber);
     }
 
-    public ResultDao subtractNumbers(Optional<String> number, Optional<String> anotherNumber) {
+    public ResultDto subtractNumbers(Optional<String> number, Optional<String> anotherNumber) {
         double firstNumber = parseStringForDouble(number);
         double secondNumber = parseStringForDouble(anotherNumber);
-        return new ResultDao(firstNumber - secondNumber);
+        return new ResultDto(firstNumber - secondNumber);
     }
 
-    public ResultDao divideNumbers(Optional<String> number, Optional<String> anotherNumber) {
+    public ResultDto divideNumbers(Optional<String> number, Optional<String> anotherNumber) {
         double firstNumber = parseStringForDouble(number);
         double secondNumber = parseStringForDouble(anotherNumber);
         checkForZero(secondNumber);
-        return new ResultDao(firstNumber / secondNumber);
+        return new ResultDto(firstNumber / secondNumber);
     }
 
-    public ResultDao getFibonacci(Optional<String> number) {
+    public ResultDto getFibonacci(Optional<String> number) {
         int inputNumber = parseStringForInteger(number);
         if (inputNumber == 1 || inputNumber == 2) {
-            return new ResultDao(1);
+            return new ResultDto(1);
         } else {
-            return new ResultDao(calculateFibonacciNumber(inputNumber));
+            return new ResultDto(calculateFibonacciNumber(inputNumber));
         }
     }
 

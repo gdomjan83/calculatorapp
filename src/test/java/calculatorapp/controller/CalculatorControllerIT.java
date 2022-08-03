@@ -1,6 +1,6 @@
 package calculatorapp.controller;
 
-import calculatorapp.dao.ResultDao;
+import calculatorapp.dto.ResultDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
@@ -33,7 +33,7 @@ class CalculatorControllerIT {
                         .queryParam("otherNumber", otherNumbers[repetitionInfo.getCurrentRepetition() - 1]).build())
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResultDao.class)
+                .expectBody(ResultDto.class)
                 .value(r -> assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], r.getResult(), 0.0001));
     }
 
@@ -79,7 +79,7 @@ class CalculatorControllerIT {
                         .queryParam("otherNumber", otherNumbers[repetitionInfo.getCurrentRepetition() - 1]).build())
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResultDao.class)
+                .expectBody(ResultDto.class)
                 .value(r -> assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], r.getResult(), 0.0001));
     }
 
@@ -125,7 +125,7 @@ class CalculatorControllerIT {
                         .queryParam("otherNumber", otherNumbers[repetitionInfo.getCurrentRepetition() - 1]).build())
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResultDao.class)
+                .expectBody(ResultDto.class)
                 .value(r -> assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], r.getResult(), 0.0001));
     }
 
@@ -171,7 +171,7 @@ class CalculatorControllerIT {
                         .queryParam("otherNumber", otherNumbers[repetitionInfo.getCurrentRepetition() - 1]).build())
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResultDao.class)
+                .expectBody(ResultDto.class)
                 .value(r -> assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], r.getResult(), 0.0001));
     }
 
@@ -231,7 +231,7 @@ class CalculatorControllerIT {
                         .queryParam("number", input[repetitionInfo.getCurrentRepetition() - 1]).build())
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(ResultDao.class)
+                .expectBody(ResultDto.class)
                 .value(r -> assertEquals(output[repetitionInfo.getCurrentRepetition() - 1], r.getResult()));
     }
 

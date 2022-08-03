@@ -1,5 +1,5 @@
 ### Addition with correct values
-GET http://localhost:8080/api/calculator/add?number=3&otherNumber=4
+GET http://localhost:8080/api/calculator/add?number=3&otherNumber=4.2
 Accept: application/json
 
 ### Addition with missing value

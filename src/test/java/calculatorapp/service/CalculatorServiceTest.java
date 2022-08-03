@@ -1,6 +1,6 @@
 package calculatorapp.service;
 
-import calculatorapp.dao.ResultDao;
+import calculatorapp.dto.ResultDto;
 import calculatorapp.exception.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
@@ -21,7 +21,7 @@ class CalculatorServiceTest {
     @DisplayName("Testing addition with correct input values")
     void testAddNumbersCorrectInput(RepetitionInfo repetitionInfo) {
         double[] resultNumber = {10.4, 11, -9.2};
-        ResultDao result = service.addNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
+        ResultDto result = service.addNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
         assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], result.getResult(), 0.001);
     }
 
@@ -50,7 +50,7 @@ class CalculatorServiceTest {
     @DisplayName("Testing multiplication with correct input values")
     void testMultiplyNumbersCorrectInput(RepetitionInfo repetitionInfo) {
         double[] resultNumber = {26.23, 24, 14.4};
-        ResultDao result = service.multiplyNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
+        ResultDto result = service.multiplyNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
         assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], result.getResult(), 0.001);
     }
 
@@ -79,7 +79,7 @@ class CalculatorServiceTest {
     @DisplayName("Testing subtraction with correct input values")
     void testSubtractNumbersCorrectInput(RepetitionInfo repetitionInfo) {
         double[] resultNumber = {-1.8, -5, 5.2};
-        ResultDao result = service.subtractNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
+        ResultDto result = service.subtractNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
         assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], result.getResult(), 0.001);
     }
 
@@ -108,7 +108,7 @@ class CalculatorServiceTest {
     @DisplayName("Testing division with correct input values")
     void testDivideNumbersCorrectInput(RepetitionInfo repetitionInfo) {
         double[] resultNumber = {0.704918, 0.375, 0.27777};
-        ResultDao result = service.divideNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
+        ResultDto result = service.divideNumbers(Optional.of(numbers[repetitionInfo.getCurrentRepetition() - 1]), Optional.of(otherNumbers[repetitionInfo.getCurrentRepetition() - 1]));
         assertEquals(resultNumber[repetitionInfo.getCurrentRepetition() - 1], result.getResult(), 0.001);
     }
 
@@ -147,8 +147,8 @@ class CalculatorServiceTest {
         String[] input = {"2", "6", "19"};
         int[] output = {1, 8, 4181};
 
-        ResultDao resultDao = service.getFibonacci(Optional.of(input[repetitionInfo.getCurrentRepetition() - 1]));
-        assertEquals(output[repetitionInfo.getCurrentRepetition() - 1], resultDao.getResult());
+        ResultDto resultDto = service.getFibonacci(Optional.of(input[repetitionInfo.getCurrentRepetition() - 1]));
+        assertEquals(output[repetitionInfo.getCurrentRepetition() - 1], resultDto.getResult());
     }
 
     @Test
