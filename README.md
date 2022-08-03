@@ -66,8 +66,8 @@ történt.
 Az alkalmazáshoz belső dokumentáció is készült a SwaggerUI implementációjával, melynek segítségével az alkalmazás működése megtekinthető
 a http://localhost:8080/swagger-ui.html címen (az alkalmazás futtatása közben).
 
-A mellékelt Dockerfile segítségével Docker image generálható, így az alkalmazás Dockerből is futtatható. Továbbá az alkalmazás futtatható verzióját tartalmazó
-docker image letölthető és futtatható a Docker Hubról a következő paranccsal: `docker run -d -p 8080:8080 --name calculator gdomjan83/test:calculator` 
+A mellékelt Dockerfile segítségével `Docker image` generálható, így az alkalmazás Dockerből is futtatható. Továbbá az alkalmazás futtatható verzióját tartalmazó
+docker image letölthető a Docker Hubról és futtatható a következő paranccsal: `docker run -d -p 8080:8080 --name calculator gdomjan83/test:calculator` 
 Ezt követően az alkalmazás működés közben is megtekinthető a http://localhost:8080/swagger-ui.html címen.
 
 ---
