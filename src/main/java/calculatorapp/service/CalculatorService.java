@@ -36,7 +36,7 @@ public class CalculatorService {
 
     public ResultDto getFibonacci(Optional<String> number) {
         int inputNumber = parseStringForInteger(number);
-        if (inputNumber == 1 || inputNumber == 2) {
+        if (inputNumber == 1) {
             return new ResultDto(1);
         } else {
             return new ResultDto(calculateFibonacciNumber(inputNumber));
@@ -44,10 +44,10 @@ public class CalculatorService {
     }
 
     private int calculateFibonacciNumber(int input) {
-        int firstNumber = 1;
+        int firstNumber = 0;
         int secondNumber = 1;
         int temp;
-        for (int i = 3; i <= input; i++) {
+        for (int i = 2; i <= input; i++) {
             temp = secondNumber;
             secondNumber += firstNumber;
             firstNumber = temp;
